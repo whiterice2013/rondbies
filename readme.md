@@ -26,6 +26,6 @@ A simple zombie survival game built with JavaScript and HTML5 Canvas.
 ## Credits
 
 - Sound effects from [myinstants.com](https://www.myinstants.com/)
-- Game by [Your Name]
+- Game by [whitryse]
 
 ---
