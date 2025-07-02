@@ -1,11 +1,13 @@
+import React from 'react';
 import GameCanvas from './components/GameCanvas';
+import Player from './components/Player';
 
-function App() {
+export default function App() {
   return (
     <div>
-      <GameCanvas />
+      <GameCanvas>
+        <Player />
+      </GameCanvas>
     </div>
   );
 }
-
-export default App;

@@ -1,20 +1,9 @@
-import { useEffect, useRef } from 'react';
+import React from 'react';
 
-export default function GameCanvas() {
-  const canvasRef = useRef(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    ctx.fillStyle = '#000';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    // 這裡之後放你的遊戲邏輯
-  }, []);
-
-  return <canvas ref={canvasRef} />;
+export default function GameCanvas({ children }) {
+  return (
+    <div style={{ border: '2px solid black', width: '600px', height: '400px', position: 'relative' }}>
+      {children}
+    </div>
+  );
 }
