@@ -1,14 +1,16 @@
-import React, { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from 'react';
+import { constants } from './constants';
+const cts = constants;
 
-const PLAYER_RADIUS = 25;
+// Constants for player movement
+const PLAYER_RADIUS = 10;
 const PLAYER_SPEED = 4;
 const FRICTION = 0.92;
 const MAX_SPEED = 8;
-const WIDTH = 800;  // Set your game/canvas width
-const HEIGHT = 600; // Set your game/canvas height
+
 
 export default function Player() {
-    const [position, setPosition] = useState({ left: WIDTH / 2, top: HEIGHT / 2 });
+    const [position, setPosition] = useState({ left: cts.width / 2, top: cts.height / 2 });
     const velocity = useRef({ x: 0, y: 0 });
     const keys = useRef({});
 
@@ -50,8 +52,8 @@ export default function Player() {
             setPosition(pos => {
                 let left = pos.left + velocity.current.x;
                 let top = pos.top + velocity.current.y;
-                left = Math.max(PLAYER_RADIUS, Math.min(WIDTH - PLAYER_RADIUS, left));
-                top = Math.max(PLAYER_RADIUS, Math.min(HEIGHT - PLAYER_RADIUS, top));
+                left = Math.max(PLAYER_RADIUS, Math.min(cts.width - PLAYER_RADIUS, left));
+                top = Math.max(PLAYER_RADIUS, Math.min(cts.height - PLAYER_RADIUS, top));
                 return { left, top };
             });
 
