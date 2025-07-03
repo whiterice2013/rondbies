@@ -1,5 +1,5 @@
 import React from 'react';
-import { constants } from './constants'; 
+import { constants } from './constants.ts'; 
 const cts = constants;
 
 export default function GameCanvas({ children }) {
